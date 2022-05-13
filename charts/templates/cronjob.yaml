@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Values.cronjob.metadata.name}}
+  namespace: {{ .Values.cronjob.metadata.namespace }}
+spec:
+  schedule: "{{ .Values.cronjob.spec.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: {{ .Values.cronjob.metadata.name }}
+            image: "{{ .Values.cronjob.spec.containers.registry | default "docker.io" }}/{{ .Values.cronjob.spec.containers.image }}:{{ .Values.cronjob.spec.containers.tag}}"
+            imagePullPolicy: {{ .Values.cronjob.spec.containers.pullPolicy }}
+          restartPolicy: OnFailure

@@ -1,0 +1,11 @@
+cronjob:
+  metadata:
+    name: staging-s3-file-creation
+    namespace: staging
+  spec:
+    schedule: "*/5 * * * *"
+    containers:
+      registry: "nexus.sigame.com.br"
+      image: "python-s3-creation"
+      tag: 0.0.1
+      pullPolicy: IfNotPresent
