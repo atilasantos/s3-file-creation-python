@@ -43,7 +43,7 @@ This repository is responsible for provisioning the aimed infrastructure, howeve
 
 ## Provisioning
 Follow the steps bellow to provision the infrastructure without hadaches:
-1. Inside the repository root folder, execute:
+1. Inside the iac/ repository folder, execute:
 ```shell
 terraform init
 ```
@@ -55,7 +55,7 @@ terraform plan
 ```shell
 terraform apply -auto-approve
 ```
-4. Once all the infrastructure is deployed, execute the following command to configure the EKS cluster context inside your machine:
+4. Once all the infrastructure is deployed, execute the following command, in the repository root dir, to configure the EKS cluster context inside your machine:
 ```shell
 aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
 ```
