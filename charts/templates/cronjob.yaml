@@ -1,4 +1,4 @@
-apiVersion: batch/v1
+apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: {{ .Values.cronjob.metadata.name}}
@@ -11,6 +11,13 @@ spec:
         spec:
           containers:
           - name: {{ .Values.cronjob.metadata.name }}
-            image: "{{ .Values.cronjob.spec.containers.registry | default "docker.io" }}/{{ .Values.cronjob.spec.containers.image }}:{{ .Values.cronjob.spec.containers.tag}}"
+            image: "{{ .Values.cronjob.spec.containers.registry }}/{{ .Values.cronjob.spec.containers.image }}:{{ .Values.cronjob.spec.containers.tag}}"
             imagePullPolicy: {{ .Values.cronjob.spec.containers.pullPolicy }}
+            env:
+            - name: BUCKET_NAME
+              value: {{ .Values.cronjob.spec.env.BUCKET_NAME}}
+            - name: ACCESS_KEY
+              value: {{ .Values.cronjob.spec.env.ACCESS_KEY}}
+            - name: SECRET_KEY
+              value: {{ .Values.cronjob.spec.env.SECRET_KEY}}
           restartPolicy: OnFailure

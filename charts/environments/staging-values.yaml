@@ -5,7 +5,11 @@ cronjob:
   spec:
     schedule: "*/5 * * * *"
     containers:
-      registry: "nexus.sigame.com.br"
-      image: "python-s3-creation"
-      tag: 0.0.1
+      registry: "atilarmao"
+      image: "s3-file-creation"
+      tag: 0.0.2
       pullPolicy: IfNotPresent
+    env:
+      BUCKET_NAME: staging-atila-santos-platform-challange
+      ACCESS_KEY: ""
+      SECRET_KEY: ""
