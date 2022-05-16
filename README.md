@@ -103,7 +103,15 @@ kubectl logs -n staging staging-s3-file-creation-1652673000-7pqvj
 INFO:asyncio:file created with success: platform-challange-2022-05-16-03:50:07.txt
 ```
 ## Destroying the provisioned infrastructure
-Once the validation is ok, execute:
+1. Uninstall the deployed app:
+```shell
+helm uninstall s3-creation -n qa
+helm uninstall s3-creation -n staging
+2. Clear all the buckets:
+```shell
+aws s3 rm s3://<BUCKET_NAME> --recursive
+```
+Once the buckets are empty, execute the following command inside iac folder:
 ```shell
 terraform destroy -auto-approve
 ```
