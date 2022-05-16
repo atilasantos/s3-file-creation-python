@@ -12,7 +12,7 @@ Obs: This README.md file was written focused to Linux users, may other OS system
 - Have an account on [AWS](https://aws.amazon.com/pt/premiumsupport/knowledge-center/create-and-activate-aws-account/ "Creating an aws account").
 - While creating your [IAM](https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/id_users_create.html "How to create IAM user account"), don't forget to download the .csv file with the generated key/secret pair, you'll need them in the further steps.
 - Install [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli "How to install terraform")
-- Create a [S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html "Create a S3 Bucket") service on AWS which will be responsible to store the infrastructure state (fix the name if necessary in [backend.tf](https://github.com/atilasantos/iac-terraform-remessa-online-poc/blob/main/backend.tf)
+- Create a [S3 Bucket](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html "Create a S3 Bucket") service on AWS which will be responsible to store the infrastructure state (fix the name if necessary in [backend.tf](https://github.com/atilasantos/iac-terraform-remessa-online-poc/blob/main/backend.tf))
 - Have [helm](https://helm.sh/docs/intro/install/ "How to install helm") and [kubectl](https://kubernetes.io/docs/tasks/tools/ "How to install kubectl") installed.
 
 ## Getting started 🚀
@@ -37,9 +37,9 @@ This repository is responsible for provisioning the aimed infrastructure, howeve
 - **env-values.yaml**: Define the values to be applied according to the environment of deployment, also has the requirement of running every five minutes.
 
 ## App files
--**Dockerfile**: The file used to build the docker image containing the code app.
--**requirements.txt**: The required packages to run the application
--**src/run.py**: The code itself which is responsible to create files inside a S3 bucket.
+- **Dockerfile**: The file used to build the docker image containing the code app.
+- **requirements.txt**: The required packages to run the application
+- **src/run.py**: The code itself which is responsible to create files inside a S3 bucket.
 
 ## Provisioning
 Follow the steps bellow to provision the infrastructure without hadaches:
