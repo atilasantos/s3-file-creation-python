@@ -5,9 +5,6 @@ resource "aws_s3_bucket_lifecycle_configuration" "s3-lifecycle" {
     for_each = var.lifecycle_rules
     content {
       id = rule.value["id"]
-      filter {
-        prefix = var.prefix
-      }
       expiration {
         days = 1
       }

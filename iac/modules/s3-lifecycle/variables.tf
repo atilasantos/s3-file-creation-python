@@ -8,7 +8,3 @@ variable "lifecycle_rules" {
 variable "bucket_id" {
   type = string
 }
-
-variable "prefix" {
-  type = string
-}

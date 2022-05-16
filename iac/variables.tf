@@ -2,14 +2,6 @@ variable "region" {
   default = "sa-east-1"
 }
 
-variable "qa-prefix" {
-  default = "qa"
-}
-
-variable "staging-prefix" {
-  default = "staging"
-}
-
 variable "qa-tags" {
   default = {
     env         = "qa"
@@ -25,11 +17,11 @@ variable "staging-tags" {
 }
 
 variable "qa-bucket_name" {
-  default = "qa-s3-file-creation"
+  default = "qa-atila-santos-platform-challange"
 }
 
 variable "staging-bucket_name" {
-  default = "staging-s3-file-creation"
+  default = "staging-atila-santos-platform-challange"
 }
 
 variable "qa-lifecycle_rules" {
