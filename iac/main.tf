@@ -14,14 +14,14 @@ module "qa-s3-lifecycle" {
   source = "./modules/s3-lifecycle"
 
   bucket_id       = module.qa-s3.bucket_id
-  lifecycle_rules = var.qa-lifecycle_rules
+  lifecycle_rules = var.lifecycle_rules
 }
 
 module "staging-s3-lifecycle" {
   source = "./modules/s3-lifecycle"
 
   bucket_id       = module.staging-s3.bucket_id
-  lifecycle_rules = var.staging-lifecycle_rules
+  lifecycle_rules = var.lifecycle_rules
 }
 
 # eks cluster
