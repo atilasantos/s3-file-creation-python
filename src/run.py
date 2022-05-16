@@ -19,7 +19,7 @@ now = datetime.now()
 
 # generate a file name 
 def get_file_name(name: str) -> str:
-    return f'{name}-{now.strftime("%Y-%m-%d-%H:%M:%S")}.txt'
+    return f'{now.strftime("%Y-%m-%d-%H:%M:%S")}-{name}.txt'
 
 try:        
         # Create an S3 client
